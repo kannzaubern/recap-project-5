@@ -13,6 +13,8 @@ export default function ArtGallery({ favorites, toggleFavorite }) {
   if (error) return <p>Failed to load Art Pieces</p>;
   if (!artPieces) return <p>Loading ...</p>;
 
+  console.log("ArtPieces from API:", artPieces);
+
   return (
     <>
       <Head>
@@ -21,15 +23,15 @@ export default function ArtGallery({ favorites, toggleFavorite }) {
       <ul>
         {artPieces.map((piece) => (
           <li key={piece.slug}>
-            <ArtPieces
-              title={piece.name}
-              image={piece.imageSource}
-              artist={piece.artist}
-            />
+
+        
             <FavoriteButton
               isFavorite={favorites.includes(piece.slug)}
               onClick={() => toggleFavorite(piece.slug)}
             />
+
+            <ArtPieces artPiece={piece} />
+
           </li>
         ))}
       </ul>
