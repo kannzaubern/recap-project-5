@@ -17,7 +17,7 @@ export default function ArtPieceCard({ artPiece, isFavorite, toggleFavorite }) {
           src={artPiece.imageSource}
           alt={artPiece.name || "Artwork"}
           width={600}
-          height={300}
+          height={337}
           objectFit="cover"
         />
       </Link>
