@@ -19,11 +19,7 @@ export default function FavoritePage({ favorites, artPieces, toggleFavorite }) {
       <ul>
         {favoritePieces.map((piece) => (
           <li key={piece.slug}>
-            <ArtPieces
-              title={piece.name}
-              image={piece.imageSource}
-              artist={piece.artist}
-            />
+            <ArtPieces artPiece={piece} />
             <FavoriteButton
               isFavorite={favorites.includes(piece.slug)}
               onClick={() => toggleFavorite(piece.slug)}
