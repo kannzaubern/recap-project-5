@@ -1,6 +1,5 @@
 import Head from "next/head";
-import ArtPieces from "@/components/ArtPieces";
-import FavoriteButton from "@/components/FavoriteButton";
+import Gallery from "@/components/Gallery";
 
 export default function FavoritePage({ favorites, artPieces, toggleFavorite }) {
   const favoritePieces = artPieces.filter((piece) =>
@@ -16,21 +15,11 @@ export default function FavoritePage({ favorites, artPieces, toggleFavorite }) {
       <Head>
         <title>Favorite Art Pieces</title>
       </Head>
-      <ul>
-        {favoritePieces.map((piece) => (
-          <li key={piece.slug}>
-            <ArtPieces
-              title={piece.name}
-              image={piece.imageSource}
-              artist={piece.artist}
-            />
-            <FavoriteButton
-              isFavorite={favorites.includes(piece.slug)}
-              onClick={() => toggleFavorite(piece.slug)}
-            />
-          </li>
-        ))}
-      </ul>
+      <Gallery
+        favorites={favorites}
+        toggleFavorite={toggleFavorite}
+        artPieces={favoritePieces}
+      />
     </>
   );
 }

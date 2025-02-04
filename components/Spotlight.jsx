@@ -1,6 +1,3 @@
-import useSWR from "swr";
-import Head from "next/head";
-import ArtPieces from "./ArtPieces";
 import Image from "next/image";
 
 export default function Spotlight({ randomArtPiece }) {

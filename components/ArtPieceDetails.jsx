@@ -1,0 +1,27 @@
+import Image from "next/image";
+import Link from "next/link";
+import ArtPieceCard from "./ArtPieceCard";
+
+export default function ArtPieceDetails({
+  artPiece,
+  isFavorite,
+  toggleFavorite,
+}) {
+  if (!artPiece) {
+    return <p>Art Piece not found.</p>;
+  }
+  console.log("artPiece.slug", artPiece.slug);
+  return (
+    <>
+      <Link href="/gallery">Back to Gallery</Link>
+      <ArtPieceCard
+        artPiece={artPiece}
+        isFavorite={isFavorite}
+        toggleFavorite={() => toggleFavorite(artPiece.slug)}
+      />
+      <p>{artPiece.description}</p>
+      <h3>Year: {artPiece.year}</h3>
+      <h3>Genre: {artPiece.genre}</h3>
+    </>
+  );
+}

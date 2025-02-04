@@ -6,7 +6,7 @@ export default function NavBar() {
     <>
       <StyledNavBar>
         <Link href="/">Spotlight</Link>
-        <Link href="/art-pieces">Gallery</Link>
+        <Link href="/gallery">Gallery</Link>
         <Link href="/favorites">Favorites</Link>
       </StyledNavBar>
     </>
