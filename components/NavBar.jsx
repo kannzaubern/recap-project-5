@@ -14,6 +14,7 @@ export default function NavBar() {
 }
 
 const StyledNavBar = styled.nav`
+  z-index: 1;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -25,6 +26,11 @@ const StyledNavBar = styled.nav`
   padding: 1rem 0;
   a {
     color: #b1ec6f;
-    font-weight: lighter;
+    text-decoration: none;
+  }
+
+  a[aria-current="page"] {
+    font-weight: bold;
+    color: #ffffff;
   }
 `;

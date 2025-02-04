@@ -8,7 +8,9 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    font-family: system-ui;
+    margin: 24px;
+    margin-bottom: 80px;
+    font-family: 'Inter', sans-serif;
+    background-color: #F2F4F5;
   }
 `;
