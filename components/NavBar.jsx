@@ -21,7 +21,10 @@ const StyledNavBar = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #ee9ca8;
+  background-color: #154618;
   padding: 1rem 0;
-  border-top: 2px solid #f42442;
+  a {
+    color: #b1ec6f;
+    font-weight: lighter;
+  }
 `;
