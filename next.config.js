@@ -13,6 +13,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+    domains: ["lucide.dev"], // Corrected domain
   },
   webpack(config) {
     config.module.rules.push({
