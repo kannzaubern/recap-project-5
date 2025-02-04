@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "./FavoriteButton";
 
-export default function ArtPieces({ artPiece }) {
+export default function ArtPieceCard({ artPiece, isFavorite, toggleFavorite }) {
   return (
     <main>
       <h2>{artPiece.name}</h2>
@@ -14,6 +15,7 @@ export default function ArtPieces({ artPiece }) {
         />
       </Link>
       <h3>{artPiece.artist}</h3>
+      <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite} />
     </main>
   );
 }

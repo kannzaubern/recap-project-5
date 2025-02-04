@@ -8,7 +8,7 @@ export default function ArtPieceDetails({ artPiece }) {
 
   return (
     <>
-      <Link href="/art-pieces">Back to Gallery</Link>
+      <Link href="/gallery">Back to Gallery</Link>
       <h1>Title: {artPiece.name}</h1>
       <h3>Artist: {artPiece.artist}</h3>
       <Image
