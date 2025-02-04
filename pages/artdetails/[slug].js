@@ -1,7 +1,11 @@
 import { useRouter } from "next/router";
 import ArtPieceDetails from "@/components/ArtPieceDetails";
 
-export default function ArtPieceDetailsPage({ artPieces }) {
+export default function ArtPieceDetailsPage({
+  artPieces,
+  favorites,
+  toggleFavorite,
+}) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -12,5 +16,11 @@ export default function ArtPieceDetailsPage({ artPieces }) {
     return <p>Art Piece not found</p>;
   }
 
-  return <ArtPieceDetails artPiece={singleArtPiece} />;
+  return (
+    <ArtPieceDetails
+      artPiece={singleArtPiece}
+      isFavorite={favorites.includes(singleArtPiece.slug)}
+      toggleFavorite={toggleFavorite}
+    />
+  );
 }

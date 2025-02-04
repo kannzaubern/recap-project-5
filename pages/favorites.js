@@ -1,13 +1,7 @@
 import Head from "next/head";
-import ArtPieceCard from "@/components/ArtPieceCard";
 import Gallery from "@/components/Gallery";
 
-export default function FavoritePage({
-  favorites,
-  artPieces,
-  toggleFavorite,
-  isFavorite,
-}) {
+export default function FavoritePage({ favorites, artPieces, toggleFavorite }) {
   const favoritePieces = artPieces.filter((piece) =>
     favorites.includes(piece.slug)
   );
