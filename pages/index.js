@@ -1,13 +1,9 @@
-import Link from "next/link";
+import NavBar from "@/components/NavBar";
 
 export default function HomePage() {
   return (
     <div>
       <h1>ART GALLERY</h1>
-      <nav>
-        <Link href="/art-pieces">Art Pieces</Link>
-        <Link href="/favorites">Favorites</Link>
-      </nav>
     </div>
   );
 }
