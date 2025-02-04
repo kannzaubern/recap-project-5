@@ -1,8 +1,9 @@
 import Head from "next/head";
 import useSWR from "swr";
 import ArtPieces from "@/components/ArtPieces";
+import FavoriteButton from "@/components/FavoriteButton";
 
-export default function ArtGallery() {
+export default function ArtGallery({ favorites, toggleFavorite }) {
   const {
     data: artPieces,
     error,
@@ -22,7 +23,15 @@ export default function ArtGallery() {
       <ul>
         {artPieces.map((piece) => (
           <li key={piece.slug}>
+
+        
+            <FavoriteButton
+              isFavorite={favorites.includes(piece.slug)}
+              onClick={() => toggleFavorite(piece.slug)}
+            />
+
             <ArtPieces artPiece={piece} />
+
           </li>
         ))}
       </ul>
