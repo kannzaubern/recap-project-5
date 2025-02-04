@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import ArtPieceCard from "./ArtPieceCard";
 
@@ -13,7 +12,16 @@ export default function ArtPieceDetails({
   console.log("artPiece.slug", artPiece.slug);
   return (
     <>
-      <Link href="/gallery">Back to Gallery</Link>
+      <Link
+        href="/gallery"
+        style={{
+          color: "#154618",
+          fontWeight: 500,
+          textDecoration: "none",
+        }}
+      >
+        ← Back to Gallery
+      </Link>
       <ArtPieceCard
         artPiece={artPiece}
         isFavorite={isFavorite}
