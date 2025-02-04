@@ -4,5 +4,10 @@ export default function HomePage({ artPieces }) {
   const displayRandomArtPiece =
     artPieces[Math.floor(Math.random() * artPieces.length)];
 
-  return <Spotlight randomArtPiece={displayRandomArtPiece} />;
+  return (
+    <>
+      <h1 style={{ textAlign: "center" }}>Art Gallery</h1>
+      <Spotlight randomArtPiece={displayRandomArtPiece} />
+    </>
+  );
 }

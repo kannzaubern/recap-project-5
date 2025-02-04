@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Gallery from "@/components/Gallery";
 
 export default function FavoritePage({ favorites, artPieces, toggleFavorite }) {
@@ -12,9 +11,7 @@ export default function FavoritePage({ favorites, artPieces, toggleFavorite }) {
 
   return (
     <>
-      <Head>
-        <title>Favorite Art Pieces</title>
-      </Head>
+      <h1 style={{ textAlign: "center" }}>Art Gallery</h1>
       <Gallery
         favorites={favorites}
         toggleFavorite={toggleFavorite}
