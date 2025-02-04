@@ -7,7 +7,8 @@ export default function ArtPieceDetails({ artPiece }) {
   }
 
   return (
-    <div>
+    <>
+      <Link href="/art-pieces">Back to Gallery</Link>
       <h1>Title: {artPiece.name}</h1>
       <h3>Artist: {artPiece.artist}</h3>
       <Image
@@ -19,7 +20,6 @@ export default function ArtPieceDetails({ artPiece }) {
       <p>{artPiece.description}</p>
       <h3>Year: {artPiece.year}</h3>
       <h3>Genre: {artPiece.genre}</h3>
-      <Link href="/art-pieces">Back to Gallery</Link>
-    </div>
+    </>
   );
 }
