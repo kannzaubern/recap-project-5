@@ -6,11 +6,6 @@ import FavoriteButton from "./FavoriteButton";
 export default function ArtPieceCard({ artPiece, isFavorite, toggleFavorite }) {
   return (
     <Card>
-      {/* Favorite Button */}
-      <FavoriteWrapper>
-        <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite} />
-      </FavoriteWrapper>
-
       {/* Image */}
       <Link href={`/artdetails/${artPiece.slug}`}>
         <ImageWrapper>
@@ -22,6 +17,11 @@ export default function ArtPieceCard({ artPiece, isFavorite, toggleFavorite }) {
           />
         </ImageWrapper>
       </Link>
+
+      {/* Favorite Button */}
+      <FavoriteWrapper>
+        <FavoriteButton isFavorite={isFavorite} onClick={toggleFavorite} />
+      </FavoriteWrapper>
 
       {/* Card Content */}
       <Content>
@@ -54,7 +54,6 @@ const FavoriteWrapper = styled.div`
   position: absolute;
   top: 16px;
   right: 16px;
-  z-index: 10;
 `;
 
 const Content = styled.div`

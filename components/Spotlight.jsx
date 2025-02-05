@@ -6,7 +6,7 @@ export default function Spotlight({ randomArtPiece }) {
       <Image
         src={randomArtPiece.imageSource}
         alt={randomArtPiece.title}
-        width={450}
+        width={500}
         height={250}
         style={{
           borderRadius: "16px",

@@ -6,8 +6,8 @@ export default function ArtPieceDetailsPage({
   favorites,
   toggleFavorite,
 }) {
-  const router = useRouter(); // Initialize router object to access current route
-  const { slug } = router.query; // Extract slug parameter from URL
+  const router = useRouter(); // Initialize router object (which contains information about the current route), includes details like current pathname, query parameters, etc.
+  const slug = router.query.slug; // "Get the slug property from router.query and assign it to the variable slug."
 
   // Find the specific art piece that matches the slug from the URL
   const singleArtPiece = artPieces.find((piece) => piece.slug === slug);

@@ -27,7 +27,6 @@ export default function ArtPieceDetails({
         isFavorite={isFavorite}
         toggleFavorite={() => toggleFavorite(artPiece.slug)}
       />
-      <p>{artPiece.description}</p>
       <h3>Year: {artPiece.year}</h3>
       <h3>Genre: {artPiece.genre}</h3>
     </>

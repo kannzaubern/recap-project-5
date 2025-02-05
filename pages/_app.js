@@ -9,6 +9,14 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 export default function App({ Component, pageProps }) {
   const [favorites, setFavorites] = useState([]);
 
+  function toggleFavorite(slug) {
+    if (favorites.includes(slug)) {
+      setFavorites(favorites.filter((fav) => fav !== slug));
+    } else {
+      setFavorites([...favorites, slug]);
+    }
+  }
+
   const {
     data: artPieces,
     error,
@@ -17,14 +25,6 @@ export default function App({ Component, pageProps }) {
 
   if (error) return <p>Failed to load art pieces</p>;
   if (isLoading) return <p>Loading...</p>;
-
-  function toggleFavorite(slug) {
-    if (favorites.includes(slug)) {
-      setFavorites(favorites.filter((fav) => fav !== slug));
-    } else {
-      setFavorites([...favorites, slug]);
-    }
-  }
 
   return (
     <SWRConfig
