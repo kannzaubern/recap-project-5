@@ -13,13 +13,14 @@ export default function ArtPieceCard({ artPiece, isFavorite, toggleFavorite }) {
 
       {/* Image */}
       <Link href={`/artdetails/${artPiece.slug}`}>
-        <Image
-          src={artPiece.imageSource}
-          alt={artPiece.name || "Artwork"}
-          width={600}
-          height={337}
-          objectFit="cover"
-        />
+        <ImageWrapper>
+          <Image
+            src={artPiece.imageSource}
+            alt={artPiece.name || "Artwork"}
+            layout="fill"
+            objectFit="cover"
+          />
+        </ImageWrapper>
       </Link>
 
       {/* Card Content */}
@@ -42,7 +43,7 @@ const Card = styled.div`
   flex-direction: column;
   max-width: 600px;
   max-height: 450px;
-  margin: 16px auto;
+  margin: 20px auto;
 
   &:hover {
     transform: translateY(-5px);
@@ -53,6 +54,7 @@ const FavoriteWrapper = styled.div`
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 10;
 `;
 
 const Content = styled.div`
@@ -69,4 +71,11 @@ const Subtitle = styled.h3`
   font-size: 14px;
   color: #6b7280;
   margin: 4px 0 0;
+`;
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 250px; /* Set a fixed height */
+  position: relative; /* Required for layout="fill" */
+  overflow: hidden;
 `;

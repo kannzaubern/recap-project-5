@@ -6,10 +6,10 @@ export default function ArtPieceDetailsPage({
   favorites,
   toggleFavorite,
 }) {
-  const router = useRouter();
-  const { slug } = router.query;
+  const router = useRouter(); // Initialize router object to access current route
+  const { slug } = router.query; // Extract slug parameter from URL
 
-  // Find art piece based on the slug
+  // Find the specific art piece that matches the slug from the URL
   const singleArtPiece = artPieces.find((piece) => piece.slug === slug);
 
   if (!singleArtPiece) {
